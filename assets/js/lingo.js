@@ -1,21 +1,24 @@
-var randomWord = words[Math.floor(Math.random() * words.length)]; //get Random Word
+var game = new Game();
 
-var wordArray = randomWord.split("", 5); //Split Random Word for checking
+function Game() {
+	var randomWord = words[Math.floor(Math.random() * words.length)];
+	console.log(randomWord);
 
-function check(id) {
-	var fields = [id + ".1", id + ".2", id + ".3", id + ".4", id + ".5"];
-	var result = "";
-	for (i = 0; i < fields.length; i++) {
-		if (result == "") {
-			result = document.getElementById(fields[i]).value;
+	this.check = function(box) {
+		var word = document.getElementById(box).value;
+
+		if (word === randomWord) {
+			alert('win');
+			return;
 		}
-		else {
-			result = result + document.getElementById(fields[i]).value;
-		}
-		if (result[i] == wordArray[i]) {
+
+		for (var i = 0; i < word.length; i++) {
+			for (var i = 0; i < randomWord.length; i++) {
+				randomWord[i].charAt()
+				
+			}
+				word[i].charAt()
+					console.log(word[i].charAt(0));
 		}
 	}
-
-	return result;
 }
-
